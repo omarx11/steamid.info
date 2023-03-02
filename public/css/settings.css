@@ -1,0 +1,374 @@
+:root {
+    --color-default-0: hsl(222, 19%, 11%);
+    --color-default-1: hsl(222, 19%, 13%);
+    --color-default-2: hsl(200, 18%, 23%);
+    --color-default-3: hsl(199, 18%, 33%);
+    --color-default-4: hsl(199, 18%, 38%);
+    --color-outline-1: hsl(205, 100%, 50%);
+    --color-text-1: #eee;
+    --color-text-2: #ddd;
+    --color-text-3: #999;
+    --color-link-1: hsl(221, 63%, 55%);
+    --color-link-2: hsl(227, 42%, 72%);
+    color-scheme: dark light;
+}
+
+html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    word-break: normal;
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:after, :before {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+*, :after, :before {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+
+html, body {
+    height: 100%;
+    margin: 0 auto;
+}
+
+body {
+    background: radial-gradient(var(--color-default-2), #020404);
+    color: var(--color-text-1);
+    font-size: 18px;
+    font-family: 'Roboto', 'Vazirmatn', sans-serif;
+    overflow-x: hidden;
+    transition: background .25s;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-text-2);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+select {
+    background: url("../icons/selector.svg") no-repeat right .2rem center/20px 20px;
+    appearance: none;
+}
+
+main {
+    position: relative;
+    height: auto;
+    min-height: 90%;
+}
+
+main .container {
+    background: rgba(26, 37, 44, 0.4);
+    max-width: 800px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    border-radius: 6px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.container .user_page {
+    text-align: center;
+    color: #eee;
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+main .user_info {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user_info .user_img {
+    padding-top: 8px;
+    margin: 0 auto;
+}
+
+.user_img img {
+    display: block;
+    width: 160px;
+    height: 160px;
+    border: 3px solid var(--color-default-4);
+}
+
+.user_info .user_edit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-1);
+}
+
+.user_edit .user_id {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--color-default-4);
+    padding-bottom: 10px;
+}
+
+.user_edit .user_id img {
+    display: block;
+    padding-right: 6px;
+}
+
+.user_edit .uploadProfilePic {
+    padding-top: 40px;
+    padding-bottom: 8px;
+    margin: 0 auto;
+}
+
+.uploadProfilePic form input {
+    cursor: pointer;
+}
+
+.uploadProfilePic form label {
+    display: block;
+}
+
+.uploadProfilePic form .form_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.uploadProfilePic form .form_title img {
+    padding-right: 6px;
+    display: block;
+}
+
+.uploadProfilePic .submit {
+    padding: 2px 12px 2px 12px;
+}
+
+.uploadProfilePic p {
+    color: var(--color-text-3);
+    font-size: 0.8em;
+}
+
+.container .user_fav_game {
+    padding-top: 40px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--color-default-4);
+}
+
+.user_fav_game .u_f_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user_fav_game .u_f_title img {
+    display: block;
+    padding-right: 6px;
+}
+
+.user_fav_game .u_f_img {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+}
+
+.fav_game_card_wrapper {
+    max-width: 250px;
+    min-width: 150px;
+    margin: 0;
+    flex: 0 1 16.66%;
+    padding: 1rem;
+}
+
+.fav_game_card_wrapper p {
+    color: var(--color-text-3);
+}
+
+.game_card {
+    padding: 0 0 150% 0;
+    background: url("") no-repeat transparent 50% 50%;
+    background-size: cover;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.5);
+    transition: all ease 0.28s 0.01s;
+    transform: perspective(222px) translate3d(0px, 5px, 0px) rotateX(0deg);
+    perspective-origin: top;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    color: var(--color-text-3);
+}
+
+.game_card::before {
+    width: 100%;
+    height: 172%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    background-image: linear-gradient(35deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 51.5%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 100%);
+    transform: translateY(-36%);
+    opacity: 0.5;
+    transition: all ease 0.28s 0.01s;
+}
+
+.game_card:hover, .game_card:focus {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transform: perspective(222px) translate3d(0px, 0px, 8px) rotateX(3deg);
+    transform-origin: center;
+    box-shadow: 0 14px 16px -2px rgba(0, 0, 0, 0.5);
+}
+
+.game_card:hover::before, .game_card:focus::before {
+    opacity: 1;
+    transform: translateY(-20%);
+}
+
+.game_card:active {
+    filter: brightness(80%) contrast(110%);
+}
+
+.user_fav_game .update_info {
+    color: var(--color-text-3);
+    font-size: 0.8em;
+    text-align: center;
+}
+
+.user_fav_game .update_info a {
+    color: var(--color-link-2);
+}
+
+/* chose games dropdown */
+.user_games_list {
+    width: 100%;
+}
+
+.game_list_btn, .games_options li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.game_list_btn {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 16px;
+    color: var(--color-text-2);
+    background-color: var(--color-default-2);
+    border-radius: 4px;
+    justify-content: space-between;
+}
+
+.game_list_btn img {
+    width: 20px;
+}
+
+.games_library {
+    position: absolute;
+    width: 305px;
+    margin-left: -88px;
+    display: none;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: var(--color-default-2);
+    border-radius: 4px;
+}
+
+.user_games_list.active .games_library {
+    display: block;
+    z-index: 1000;
+}
+
+.games_library .search {
+    position: relative;
+}
+
+.games_search img {
+    position: absolute;
+    padding-top: 4px;
+    padding-left: 4px;
+    width: 22px;
+}
+
+.games_search input {
+    height: 30px;
+    width: 88%;
+    outline: none;
+    font-size: 16px;
+    border: 0;
+    border-radius: 4px;
+    padding-left: 34px;
+    background-color: var(--color-default-4);
+}
+
+.games_search input:focus {
+    outline: 3px solid var(--color-link-1);
+}
+
+.games_search input::placeholder {
+    color: #bfbfbf;
+}
+
+.games_library .games_options {
+    margin-top: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 7px;
+}
+
+.games_options::-webkit-scrollbar {
+    width: 7px;
+}
+
+.games_options::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+    border-radius: 25px;
+}
+
+.games_options::-webkit-scrollbar-thumb {
+    background-color: #aaa;
+    border-radius: 25px;
+}
+
+.games_options::-webkit-scrollbar-thumb:hover {
+    background-color: #b3b3b3;
+}
+
+.games_options li {
+    height: 50px;
+    padding: 0 13px;
+    font-size: 16px;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-align: left;
+}
+
+.games_options li:hover, li.selected {
+    border-radius: 5px;
+    background-color: var(--color-link-1);
+}
+
+body.ar footer p {
+    text-align: right;
+}

@@ -1,0 +1,81 @@
+<header class="mini_header">
+    <nav class="mobile_nav">
+        <div class="nav_toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- mobile navbar -->
+        <div class="menu_container">
+            <div class="menu_list">
+                <ul>
+                    <p data-lang="menu_list_p_1">Scroll to</p>
+                    <li><a href="/#games-grabber">Games Grabber</a></li>
+                    <li><a href="/store">Steam Charts</a></li>
+                </ul>
+                <ul>
+                    <p data-lang="menu_list_p_2">Language</p>
+                    <select class="lang_selector nav_lang_selector">
+                        <option value="en" selected>EN (English)</option>
+                        <option value="ar">AR (العربية)</option>
+                    </select>
+                </ul>
+                <ul>
+                    <p id="sign_in_p" data-lang="menu_list_p_3">Sign In</p>
+                </ul>
+                <div class="sign_in"><a href="/login"><img src="/icons/power-off.svg"><span data-lang="sign_in">Sign-In</span></a></div>
+                <div class="nav_footer" data-lang="footer_p">graduation college project, <a target="_top" href="/students" rel="noopener noreferrer">more info</a></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- website logo -->
+    <div class="website_logo">
+        <a href="." target="_self">SGG<img src="/icons/logo.svg"></a>
+    </div>
+
+    <div class="navbar_center">
+        <a href="/store">Steam Charts</a>
+        <a href="/#games-grabber">Games Grabber</a>
+        <select class="lang_selector">
+            <option value="en" selected>EN (English)</option>
+            <option value="ar">AR (العربية)</option>
+        </select>
+    </div>
+
+    <div class="navbar_right">
+        <div class="light_mode" value="dark"><img src="/icons/brightness-down.svg"></div>
+        <% if (!user) { %>
+        <div class="sign_in"><a href="/login"><img src="/icons/power-off.svg"><span data-lang="sign_in">Sign-In</span></a></div>
+        <% } else { %>
+        <span class="_break"></span>
+        <div class="u_dropdown">
+            <div class="u_dropicon">
+                <p id="user_name"><%= user.displayName %></p>
+                <a href="#" target="_self">
+                    <img src="<%= user.photos[1].value %>">
+                </a>
+            </div>
+            <div class="u_dropdown_content">
+                <a href="/user/<%= user.id %>">
+                    <p>Your Profile</p>
+                    <img src="/icons/user-circle.svg">
+                </a>
+                <a href="/">
+                    <p>Home Page</p>
+                    <img src="/icons/home-2.svg">
+                </a>
+                <a href="/settings">
+                    <p>Settings</p>
+                    <img src="/icons/settings.svg">
+                </a>
+                <a href="/auth/logout">
+                    <p>Sign out</p>
+                    <img src="/icons/logout.svg">
+                </a>
+            </div>
+        </div>
+        <% } %>
+    </div>
+</header>

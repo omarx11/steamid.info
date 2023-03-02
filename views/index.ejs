@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+    <meta name="keywords" content="steam, steam games, steam id">
+    <meta name="description" content="Find and show list of games from any steam public profile by just putting the steamID in the search." />
+    <title>Steam Games Grabber</title>
+    <!-- Open Graph -->
+    <meta property="og:url" content="https://steamid.info/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Steam Games Grabber">
+    <meta property="og:description" content="Find and show list of games from any steam public profile by just putting the steamID in the search.">
+    <meta property="og:image" content="https://steamid.info/icons/og-image.jpg">
+    <!-- --- -->
+    <script type="text/javascript" src="js/language.js" defer></script>
+    <script type="text/javascript" src="js/data.js" defer></script>
+    <script type="text/javascript" src="js/mobile.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"></script>
+    <script type="text/javascript" src="js/gtag.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.mini.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/lightmode.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <!-- mini header -->
+    <%- include("partials/miniHeader.ejs"); %>
+
+    <!-- large header -->
+    <header class="header">
+        <h1 class="diplay_1" data-lang="header_p_1">Steam Games Grabber</h1>
+        <p class="diplay_2" data-lang="header_p_2">Find and grab list of games from any steam public profile by just putting the steamID in the search, And after logged in you can easily see your friends list with there own games</p>
+    </header>
+
+    <!-- main content -->
+    <main>
+        <div class="container_1" id="games-grabber">
+            <div class="steam_finder">
+                <!-- how to use? directions -->
+                <div class="directions">
+                    <p data-lang="directions_1">How can I find my SteamID?</p>
+                    <ol>
+                        <li data-lang="directions_2">Open your Steam Community Profile</li>
+                        <li data-lang="directions_3">Click Edit Profile</li>
+                        <li data-lang="directions_4">If you've never set a custom Steam Community URL for your account, your 64 bit ID will be shown in the URL under the CUSTOM URL box in the format 76561198#########</li>
+                        <li data-lang="directions_5">If you have set a custom URL for your account, you can delete the text in the CUSTOM URL box to see your account's 64 bit ID in the URL listed below.</li>
+                    </ol>
+                </div>
+
+                <!-- SteamID form input -->
+                <div class="form_input">
+                    <p class="example" data-lang="example">Example: 76561198965877925 | ikatakuri</p>
+                    <form class="steamid_form" method="post">
+                        <input type="text" class="steam_id_input" name="steamId" maxlength="30" autocomplete="off" placeholder="Enter your steamID">
+                        <div class="clear_input"><img src="/icons/square-x.svg"></div>
+                    </form>
+                    <a class="search_history"><img src="icons/history.svg"><span data-lang="history">search_history</span></a>
+                    <div class="id_status">
+                        <span class="loader s_1"></span>
+                        <img src="" class="user_id_img">
+                        <div class="user_searched">
+                            <p class="games_user"></p>
+                            <div class="games_length_c">
+                                <a href="#games-output-container" class="games_length"></a>
+                                <p class="games_length_title"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="s_h_display"></div>
+                </div>
+
+                <!-- games-output-container -->
+                <div class="games" id="games-output-container">
+                    <!-- save list buttons -->
+                    <div class="save_list_options">
+                        <div class="save_as">
+                            <button value="csv" data-lang="save_as_1">save as CSV</button>
+                            <button value="json" data-lang="save_as_2">save as JSON</button>
+                            <button value="excel" data-lang="save_as_3">save as EXCEL</button>
+                        </div>
+                        <div class="total_playtime">
+                            <p data-lang="playtime">Total Playtime</p>
+                            <p class="all_time">0.00</p>
+                        </div>
+                    </div>
+                    <div class="g_header sticky">
+                        <div class="h_left">
+                            <select class="apps_filter">
+                                <option selected data-lang="apps_filter_1">- Sort By -</option>
+                                <option value="1" data-lang="apps_filter_2">Hours played</option>
+                                <option value="2" data-lang="apps_filter_3">Last played date</option>
+                                <option value="3" data-lang="apps_filter_4">Last two weeks</option>
+                            </select>
+                            <select class="apps_length">
+                                <option value="25" selected>25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="250">250</option>
+                                <option value="-1" data-lang="apps_length_1">All (slow)</option>
+                            </select>
+                        </div>
+                        <div class="h_right">
+                            <label for="apps_search" data-lang="h_right_1">Search:</label><input type="search" class="apps_search" name="appSearch" id="apps_search" maxlength="20" autocomplete="off">
+                            <span class="_break"></span>
+                            <div class="clear_button" title="clear list"><img src="icons/trash.svg"></div>
+                        </div>
+                    </div>
+                    <!-- display games here -->
+                    <div class="g_container"><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div><div class="d skeleton"></div></div>
+                    <div class="g_footer">
+                        <div class="g_entries"><p></p></div>
+                        <nav class="pagination"></nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_2">
+            <div class="users_dropdown">
+                <div class="user_list">
+                    <div class="user_list_btn">
+                        <span><img src="icons/users.svg"><span data-lang="friends_list">YOUR FRIENDS LIST</span></span>
+                    </div>
+                    <div class="users_content">
+                        <div class="friends_search">
+                            <img src="icons/search-light.svg">
+                            <input spellcheck="false" type="text" placeholder="Search...">
+                        </div>
+                        <ul class="users_options">
+                            <p data-lang="f_signIn"><a href="./login">Sign-in</a> first!</p>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="user_list">
+                    <div class="user_list_btn">
+                        <span><img src="icons/user-search.svg"><span data-lang="users_list">LAST 50 OF USERS SEARCH</span></span>
+                    </div>
+                    <div class="users_content">
+                        <ul class="users_options d2"></ul>
+                    </div>
+                </div>
+                <% if (user) { %>
+                <% } %>
+            </div>
+        </div>
+    </main>
+
+    <!-- footer saction -->
+    <%- include("partials/footer.ejs"); %>
+</body>
+</html>

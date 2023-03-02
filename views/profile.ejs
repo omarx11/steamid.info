@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <% if (userFetched) { %>
+    <meta name="description" content="<%= userFetched.summary.realName %>" />
+    <title><%= userFetched.summary.nickname %> Profile | SGG</title>
+    <!-- Open Graph -->
+    <meta property="og:url" content="https://steamid.info/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<%= userFetched.summary.nickname %> Profile | SGG">
+    <meta property="og:description" content="<%= userFetched.summary.realName %>">
+    <meta property="og:image" content="<%= userFetched.summary.avatar['large'] %>">
+    <!-- --- -->
+    <% } else { %>
+    <title>user not found</title>
+    <% } %>
+    <script type="text/javascript" src="/js/language.js" defer></script>
+    <script type="text/javascript" src="/js/profile.js" defer></script>
+    <script type="text/javascript" src="/js/mobile.js" defer></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"></script>
+    <script type="text/javascript" src="/js/gtag.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/mobile.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <!-- mini header -->
+    <%- include("partials/miniHeader.ejs"); %>
+
+    <!-- main content -->
+    <main>
+        <div class="container">
+            <% if (!userFetched) { %>
+            <p class="not_found" data-lang="user_not_found">## User not found ##</p>
+            <% } else { %>
+            <h1><span data-lang="profile_name_2"></span> <%= userFetched.summary.nickname %> <span data-lang="profile_name_1">Profile Page</span></h1>
+            <div class="main_header">
+                <a href="https://steamcommunity.com/profiles/<%= userFetched.summary.steamID %>/friends/"><img src="/icons/users.svg"> Friends list</a>
+                <a href="https://steamcommunity.com/profiles/<%= userFetched.summary.steamID %>/badges/"><img src="/icons/badge.svg"> Badges</a>
+                <a href="https://store.steampowered.com/wishlist/profiles/<%= userFetched.summary.steamID %>/#sort=order"><img src="/icons/list-numbers.svg"> Wishlist</a>
+            </div>
+            <div class="user_info">
+                <div class="u_img">
+                    <% if (!userUpdate.prfilePic) { %>
+                    <img class="u_p_img" src="<%= userFetched.summary.avatar['large'] %>">
+                    <% } else { %>
+                    <img class="u_p_img" src="/images/<%= userUpdate.prfilePic.filename %>">
+                    <% } %>
+                    <a href="" class="u_s_profile"><img src="/icons/steam-store-hover.svg"> steam profile</a>
+                </div>
+                <div class="u_status">
+                    <div class="u_status_header">
+                        <p class="u_name"><%= userFetched.summary.nickname %></p>
+                        <span class="loader"></span>
+                        <a class="u_share"><img src="/icons/share.svg"> share</a>
+                    </div>
+                    <div class="more_u_s">
+                        <div class="u_description"></div>
+                        <div class="u_details">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>steamID: </td>
+                                        <td class="u_steamid"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profile Created: </td>
+                                        <td class="u_created"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profile Privacy: </td>
+                                        <td class="u_visibility"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Last Log off: </td>
+                                        <td class="u_lastLogOff"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Steam Level: </td>
+                                        <td class="u_level"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Profile State: </td>
+                                        <td class="u_state"></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Country: </td>
+                                        <td class="u_flag"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="user_fav_game">
+                <div class="u_f_title">
+                    <p><%= userFetched.summary.nickname %>  Favorite Game</p>
+                </div>
+                <div class="u_f_img">
+                    <div class="fav_game_card_wrapper">
+                        <% if (!userUpdate.primaryFavGame) { %>
+                        <p>Primary</p>
+                        <div class="game_card default" style="background-image: url('')">not set</div>
+                        <% } else { %>
+                        <p><%= userUpdate.primaryFavGame.gameName %></p>
+                        <div class="game_card" style="background-image: url('<%= userUpdate.primaryFavGame.gameImg %>')"></div>
+                        <% } %>
+                    </div>
+                    <div class="fav_game_card_wrapper">
+                        <% if (!userUpdate.secondaryFavGame) { %>
+                        <p>Secondary</p>
+                        <div class="game_card default" style="background-image: url('')">not set</div>
+                        <% } else { %>
+                        <p><%= userUpdate.secondaryFavGame.gameName %></p>
+                        <div class="game_card" style="background-image: url('<%= userUpdate.secondaryFavGame.gameImg %>')"></div>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+    </main>
+    
+    <!-- footer saction -->
+    <%- include("partials/footer.ejs"); %>
+</body>
+</html>

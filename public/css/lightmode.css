@@ -1,0 +1,246 @@
+/* # Light Mode
+================================================== */
+
+body.light {
+    background: radial-gradient(#fff, #99A6D5);
+    transition: background .25s;
+}
+
+body.light header {
+    background-color: #99A6D5;
+    box-shadow: 0 0 4px 0 #123;
+}
+
+body.light .diplay_1 {
+    text-shadow: 1px 1px #000;
+}
+
+body.light .diplay_2 {
+    color: #123;
+}
+
+body.light .mini_header {
+    background-color: #7883a9;
+}
+
+body.light .navbar_center a {
+    background-color: #484f6a8d;
+    color: #eee;
+}
+
+body.light .navbar_center a:hover {
+    color: #ccc;
+}
+
+body.light .navbar_center .lang_selector {
+    background-color: #484f6a8d;
+    color: #eee;
+}
+
+body.light .navbar_center .lang_selector:hover {
+    outline-color: #484f6a8d;
+}
+
+body.light .sign_in a:hover, .sign_in a:active {
+    outline: 3px solid #484f6a8d;
+}
+
+/* mobile navbar */
+body.light .menu_list {
+    background-color: #bac4e3;
+}
+body.light .menu_list p {
+    color: #123;
+}
+body.light .menu_list li {
+    background-color: #7883a9;
+    color: #123;
+}
+body.light .nav_lang_selector {
+    background-color: #7883a9;
+    color: #eee;
+}
+body.light .nav_lang_selector:hover {
+    outline-color: #484f6a8d;
+}
+body.light .nav_footer {
+    background-color: #99A6D5;
+    border-color: #7883a9;
+    color: #eee;
+}
+body.light .nav_footer a {
+    color: #fff;
+}
+
+/* ================ container_1 ================ */
+
+body.light .directions {
+    background-color: #99A6D5;
+    color: #000;
+    box-shadow: 0 0 20px -6px #123;
+    border-color: #8b97c2;
+}
+
+body.light .directions li {
+    color: #123;
+}
+
+body.light .form_input .example {
+    color: #000;
+}
+
+body.light .form_input input[type=text] {
+    background-image: url("../icons/search-light.svg");
+    background-color: #7883a9;
+    color: #ddd;
+}
+
+body.light .form_input input[type=text]::placeholder {
+    color: #ccc;
+}
+
+body.light .form_input input[type=text]:focus {
+    outline-color: #484f6a8d;
+}
+
+body.light .games .g_header {
+    background-color: #7883a9;
+}
+
+body.light .g_header .apps_filter {
+    background-color: #7883a9;
+}
+
+body.light .g_header .apps_filter:hover {
+    outline-color: #484f6a8d;
+}
+
+body.light .g_header .apps_length {
+    background-color: #7883a9;
+}
+
+body.light .g_header .apps_length:hover {
+    outline-color: #484f6a8d;
+}
+
+body.light .g_header .apps_search {
+    background-color: #8b97c2;
+}
+
+body.light .g_header .apps_search:focus {
+    outline-color: #484f6a8d;
+}
+
+body.light .g_header .clear_button:hover {
+    outline-color: #484f6a8d;
+}
+
+body.light .g_container {
+    background-color: #99A6D5;
+}
+
+body.light .g_container .d {
+    background-color: #99A6D5;
+    /* border: 0; */
+    border-color: #8b97c2;
+    box-shadow: 5px 5px #7883a9;
+}
+
+body.light .d .d_img_wrapper {
+    border-color: #7883a9;
+}
+
+body.light .d .d_img_wrapper #rank {
+    background-color: #7883a9;
+    color: #eee;
+}
+
+body.light .d .d_img_wrapper .d_link1 {
+    background-color: #484f6a8d;
+}
+
+body.light .d table #store a {
+    background-color: #7883a9;
+}
+
+body.light .d table #store a:hover {
+    color: #484f6a8d;
+}
+
+body.light .d table td {
+    border-color: #7883a9;
+}
+
+body.light .g_footer {
+    background-color: #7883a9;
+}
+
+body.light .d.skeleton {
+    animation-name: skeleton-loading-light;
+    box-shadow: 5px 5px #7883a9;
+}
+
+@keyframes skeleton-loading-light {
+    0% {
+        background-color: #929ec9;
+        opacity: 1;
+    }
+    100% {
+        background-color: #848eb4;
+        opacity: 0.4;
+    }
+}
+
+body.light .friends_search input::placeholder {
+    color: #ddd;
+}
+
+body.light .user_list_btn {
+    background-color: #7883a9;
+}
+
+body.light .users_content {
+    background-color: #7883a9;
+}
+
+body.light footer {
+    background-color: #aab7e4;
+}
+
+body.light footer p {
+    color: #000;
+}
+
+body.light footer a {
+    color: #123;
+}
+
+body.light .friends_search input {
+    background-color: #8b97c2;
+}
+
+/* Store page */
+
+body.light .steam_players {
+    background-color: #7883a9;
+}
+
+body.light .steam_players .s_playing {
+    color: #ddd;
+}
+
+body.light .steam_players .s_online {
+    color: #ddd;
+}
+
+body.light .apps_list .title_right p {
+    color: #000;
+}
+
+body.light .apps_list .title_left p {
+    color: #000;
+}
+
+body.light .games_list .card {
+    background-color: #7883a9;
+}

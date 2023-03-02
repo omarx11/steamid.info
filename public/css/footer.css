@@ -1,0 +1,68 @@
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 140px;
+    max-width: 1400px;
+    background-color: transparent;
+    user-select: none;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 12px;
+}
+
+footer .left_doc {
+    width: 100%;
+}
+
+footer .right_doc {
+    width: 25%;
+    padding-bottom: 40px;
+}
+
+footer p {
+    color: rgb(160, 160, 162);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer a {
+    color: var(--color-link-2);
+}
+
+footer .website_logo {
+    font-size: 1.6em;
+    pointer-events: none;
+}
+
+footer .website_logo img {
+    height: 60px;
+    rotate: 25deg;
+}
+
+footer .left_doc p {
+    color: var(--color-text-3);
+    text-align: left;
+    max-width: 550px;
+    padding-left: 12px;
+}
+
+footer .contact_icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3em;
+}
+
+footer .contact_icons a {
+    display: block;
+}
+
+footer .contact_icons a img {
+    width: 24px;
+    display: block;
+}
+
+footer .contact_icons a:hover {
+    filter: invert(0.5) sepia(1) saturate(5) hue-rotate(195deg);
+}
