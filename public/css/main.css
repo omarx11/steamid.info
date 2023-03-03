@@ -67,30 +67,6 @@ select {
     appearance: none;
 }
 
-.loader {
-    border: 18px solid var(--color-text-1);
-    border-bottom-color: var(--color-default-4);
-    border-radius: 50%;
-    margin-right: 10px;
-    display: none;
-    position: absolute;
-    animation: rotation 1s linear infinite;
-}
-
-.loader.s_2, .loader.s_3 {
-    position: relative;
-    border-width: 14px;
-}
-  
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 main {
     min-height: 100%;
     margin-left: 10px;
@@ -199,7 +175,7 @@ main .container_1 {
 
 .id_status img {
     display: block;
-    width: 48px;
+    width: 46px;
 }
 
 .id_status .user_searched {
@@ -794,7 +770,7 @@ main .container_1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
+    user-select: none;
 }
 
 .users_options li img {
@@ -909,6 +885,10 @@ body.ar .form_input .id_status {
     }
 }
 
+body.ar .user_searched .games_user {
+    text-align: right;
+}
+
 body.ar .g_header .apps_filter {
     padding: .25em .5em .25em 3em;
 }
@@ -943,4 +923,33 @@ body.ar .users_content .users_options p {
 
 body.ar footer p {
     text-align: right;
+}
+
+.loader {
+    border: 18px solid var(--color-text-1);
+    border-bottom-color: var(--color-default-4);
+    border-radius: 50%;
+    margin-right: 10px;
+    display: none;
+    position: absolute;
+    animation: rotation 1s linear infinite;
+}
+
+.loader.s_2, .loader.s_3 {
+    position: relative;
+    border-width: 14px;
+}
+
+.loader.s_4 {
+    display: inline-block;
+    border-width: 12px;
+}
+  
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

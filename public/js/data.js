@@ -353,9 +353,10 @@ async function after_submit_id() {
         // set user name
         games_user_el.textContent = data.summary.nickname;
 
-        // set user image
+        // set user image and profile link
         const user_id_img_el = document.querySelector('.user_id_img');
         user_id_img_el.src = data.summary.avatar.medium;
+        user_id_img_el.parentElement.href = `/user/${data.summary.steamID}`;
 
         // set games length number
         games_length.textContent = data.game_count;
@@ -710,7 +711,7 @@ async function add_user(selectedUser) {
         // set profile visibility status
         let visibility = user.communityvisibilitystate == '3' ? '<p style="color:lightgreen">public</p>' : '<p style="color:orangered">private</p>';
 
-        let li = `<li value="${user.steamid}" onclick="updateName(this)" class="${isSelected}"><div class="user_info"><img data-src="${user.avatar}">${user.personaname}</div>${visibility}</li>`;
+        let li = `<li value="${user.steamid}" onclick="updateName(this)" class="${isSelected}"><div class="user_info"><a href="/user/${user.steamid}" title="Profile"><img data-src="${user.avatar}"></a>${user.personaname}</div>${visibility}</li>`;
         users_options.insertAdjacentHTML('beforeend', li);
     });
     usersLazyLoading();
