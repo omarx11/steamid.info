@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Steam Project",
   "main": "index.js",
+  "type": "module",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "vercel-build": "echo hello"
   },
