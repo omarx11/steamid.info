@@ -4,6 +4,7 @@
   "description": "Steam Project",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "dev": "nodemon app.js"
   },
   "author": "omar11.sa",
