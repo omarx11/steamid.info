@@ -1,127 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
     <title><%= userLoggin.steamName %> Settings | SGG</title>
     <script type="text/javascript" src="js/language.js" defer></script>
     <script type="text/javascript" src="js/settings.js" defer></script>
     <script type="text/javascript" src="js/mobile.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"
+    ></script>
     <script type="text/javascript" src="js/gtag.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/settings.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/lightmode.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="/css/footer.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/settings.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/lightmode.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+  </head>
+  <body>
     <!-- mini header -->
     <%- include("partials/miniHeader.ejs"); %>
 
     <!-- main content -->
     <main>
-        <div class="container">
-            <!-- welcome page title -->
-            <h2 class="user_page">Account Settings for <%= userLoggin.steamName %></h2>
-            <div class="settings">
-                <div class="user_info">
-                    <div class="user_edit">
-                        <!-- user login id display -->
-                        <div class="user_id" value="<%= userLoggin.steamID %>">
-                            <img src="icons/user-circle-light.svg">
-                            <p>User ID: <%= userLoggin.steamID %></p>
-                        </div>
+      <div class="container">
+        <!-- welcome page title -->
+        <h2 class="user_page">
+          Account Settings for <%= userLoggin.steamName %>
+        </h2>
+        <div class="settings">
+          <div class="user_info">
+            <div class="user_edit">
+              <!-- user login id display -->
+              <div class="user_id" value="<%= userLoggin.steamID %>">
+                <img src="icons/user-circle-light.svg" />
+                <p>User ID: <%= userLoggin.steamID %></p>
+              </div>
 
-                        <!-- user image element -->
-                        <% if (!userLoggin.profilePic[0]) { %>
-                        <div class="user_img">
-                            <img src="<%= userLoggin.steamPic[2].value %>">
-                        </div>
-                        <% } else { %>
-                        <div class="user_img">
-                            <img src="images/<%= userLoggin.profilePic[0].filename %>">
-                        </div>
-                        <% } %>
+              <!-- user image element -->
+              <% if (!userLoggin.profilePic[0]) { %>
+              <div class="user_img">
+                <img src="<%= userLoggin.steamPic[2].value %>" />
+              </div>
+              <% } else { %>
+              <div class="user_img">
+                <img src="images/<%= userLoggin.profilePic[0].filename %>" />
+              </div>
+              <% } %>
 
-                        <!-- upload image here -->
-                        <div class="uploadProfilePic">
-                            <form action="/uploadImage" method="post" enctype="multipart/form-data">
-                                <div class="form_title">
-                                    <img src="icons/camera.svg">
-                                    <label for="img">Upload a new image: </label>
-                                </div>
-                                <!--  accept=".jpeg, .png, .jpg" -->
-                                <input type="file" name="avatar" id="img" accept=".jpeg, .png, .jpg">
-                                <input type="submit" value="Upload" class="submit">
-                            </form>
-                            <p>updating to a new image will update only on this website</p>
-                        </div>
-                    </div>
-
-                    <div class="user_fav_game">
-                        <div class="u_f_title">
-                            <img src="icons/photo.svg">
-                            <p>Update your favorite game</p>
-                        </div>
-                        <div class="u_f_img">
-                            <div class="fav_game_card_wrapper">
-                                <div class="user_games_list">
-                                    <div class="game_list_btn">
-                                        <span>1 - Primary</span>
-                                        <img src="icons/selector.svg">
-                                    </div>
-                                    <div class="games_library">
-                                        <div class="games_search">
-                                            <img src="icons/search-light.svg">
-                                            <input spellcheck="false" type="text" placeholder="Search">
-                                        </div>
-                                        <ul class="games_options"></ul>
-                                    </div>
-                                </div>
-                                
-                                <% if (!userLoggin.primaryFavGame[0]) { %>
-                                <div class="game_card default" style="background-image: url('')">not set</div>
-                                <% } else { %>
-                                <div class="game_card" style="background-image: url('<%= userLoggin.primaryFavGame[0].gameImg %>')"></div>
-                                <% } %>
-                            </div>
-                            <div class="fav_game_card_wrapper">
-                                <div class="user_games_list">
-                                    <div class="game_list_btn">
-                                        <span>2 - Secondary</span>
-                                        <img src="icons/selector.svg">
-                                    </div>
-                                    <div class="games_library">
-                                        <div class="games_search">
-                                            <img src="icons/search-light.svg">
-                                            <input spellcheck="false" type="text" placeholder="Search">
-                                        </div>
-                                        <ul class="games_options"></ul>
-                                    </div>
-                                </div>
-
-                                <% if (!userLoggin.secondaryFavGame[0]) { %>
-                                <div class="game_card default" style="background-image: url('')">not set</div>
-                                <% } else { %>
-                                <div class="game_card" style="background-image: url('<%= userLoggin.secondaryFavGame[0].gameImg %>')"></div>
-                                <% } %>
-                            </div>
-                        </div>
-                        <p class="update_info">updating a favorite game will be shown in your <a href="../user/<%= userLoggin.steamID %>">profile page</a></p>
-                    </div>
-                </div>
+              <!-- upload image here -->
+              <div class="uploadProfilePic">
+                <form
+                  action="/uploadImage"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
+                  <div class="form_title">
+                    <img src="icons/camera.svg" />
+                    <label for="img">Upload a new image: </label>
+                  </div>
+                  <!--  accept=".jpeg, .png, .jpg" -->
+                  <input
+                    type="file"
+                    name="avatar"
+                    id="img"
+                    accept=".jpeg, .png, .jpg"
+                  />
+                  <input type="submit" value="Upload" class="submit" />
+                </form>
+                <p>updating to a new image will update only on this website</p>
+              </div>
             </div>
+
+            <div class="user_fav_game">
+              <div class="u_f_title">
+                <img src="icons/photo.svg" />
+                <p>Update your favorite game</p>
+              </div>
+              <div class="u_f_img">
+                <div class="fav_game_card_wrapper">
+                  <div class="user_games_list">
+                    <div class="game_list_btn">
+                      <span>1 - Primary</span>
+                      <img src="icons/selector.svg" />
+                    </div>
+                    <div class="games_library">
+                      <div class="games_search">
+                        <img src="icons/search-light.svg" />
+                        <input
+                          spellcheck="false"
+                          type="text"
+                          placeholder="Search"
+                        />
+                      </div>
+                      <ul class="games_options"></ul>
+                    </div>
+                  </div>
+
+                  <% if (!userLoggin.primaryFavGame[0]) { %>
+                  <div
+                    class="game_card default"
+                    style="background-image: url('')"
+                  >
+                    not set
+                  </div>
+                  <% } else { %>
+                  <div
+                    class="game_card"
+                    style="
+                      background-image: url('<%= userLoggin.primaryFavGame[0].gameImg %>');
+                    "
+                  ></div>
+                  <% } %>
+                </div>
+                <div class="fav_game_card_wrapper">
+                  <div class="user_games_list">
+                    <div class="game_list_btn">
+                      <span>2 - Secondary</span>
+                      <img src="icons/selector.svg" />
+                    </div>
+                    <div class="games_library">
+                      <div class="games_search">
+                        <img src="icons/search-light.svg" />
+                        <input
+                          spellcheck="false"
+                          type="text"
+                          placeholder="Search"
+                        />
+                      </div>
+                      <ul class="games_options"></ul>
+                    </div>
+                  </div>
+
+                  <% if (!userLoggin.secondaryFavGame[0]) { %>
+                  <div
+                    class="game_card default"
+                    style="background-image: url('')"
+                  >
+                    not set
+                  </div>
+                  <% } else { %>
+                  <div
+                    class="game_card"
+                    style="
+                      background-image: url('<%= userLoggin.secondaryFavGame[0].gameImg %>');
+                    "
+                  ></div>
+                  <% } %>
+                </div>
+              </div>
+              <p class="update_info">
+                updating a favorite game will be shown in your
+                <a href="../user/<%= userLoggin.steamID %>">profile page</a>
+              </p>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
-    
+
     <!-- footer saction -->
     <%- include("partials/footer.ejs"); %>
-</body>
+  </body>
 </html>

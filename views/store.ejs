@@ -1,99 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="icons/favicon.ico">
-    <meta name="keywords" content="steam, steam games, steam id, steam store">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+    <meta name="keywords" content="steam, steam games, steam id, steam store" />
     <meta name="description" content="" />
     <title></title>
     <!-- Open Graph -->
-    <meta property="og:url" content="https://steamid.info/">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:image" content="https://steamid.info/icons/og-image.jpg">
+    <meta property="og:url" content="https://steamid.info/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta
+      property="og:image"
+      content="https://steamid.info/icons/og-image.jpg"
+    />
     <!-- --- -->
     <script type="text/javascript" src="js/language.js" defer></script>
     <script type="text/javascript" src="js/store.js" defer></script>
     <script type="text/javascript" src="js/mobile.js" defer></script>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-MBS951EPSQ"
+    ></script>
     <script type="text/javascript" src="js/gtag.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/store.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/lightmode.css">
-    <link rel="stylesheet" href="css/mobile.css">
-    <link rel="stylesheet" href="css/footer.css">
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Vazirmatn&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/store.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/lightmode.css" />
+    <link rel="stylesheet" href="css/mobile.css" />
+    <link rel="stylesheet" href="css/footer.css" />
+  </head>
+  <body>
     <!-- mini header -->
     <%- include("partials/miniHeader.ejs"); %>
 
     <!-- large header -->
     <header class="header">
-        <h1 class="diplay_1">Steam Quick LookUp</h1>
-        <p class="diplay_2" data-lang="store_h_desc">Get a look at the ongoing count of Steam's players, Browse individual game info, or see the current top most played games</p>
+      <h1 class="diplay_1">Steam Quick LookUp</h1>
+      <p class="diplay_2" data-lang="store_h_desc">
+        Get a look at the ongoing count of Steam's players, Browse individual
+        game info, or see the current top most played games
+      </p>
     </header>
 
     <!-- main content -->
     <main>
-        <div class="container" id="apps-list">
-            <div class="apps_list">
-
-                <!-- steam player count -->
-                <div class="steam_players">
-                    <div class="s_players">
-                        <div class="s_online">
-                            <div class="s_dot s_online_dot"></div>
-                            <span data-lang="s_online">PLAYING NOW</span>
-                        </div>
-                        <p class="online_num"><span class="loader s_1"></span></p>
-                    </div>
-                    <div class="s_players">
-                        <div class="s_playing">
-                            <div class="s_dot s_playing_dot"></div>
-                            <span data-lang="s_playing">ONLINE</span>
-                        </div>
-                        <p class="playing_num"><span class="loader"></span></p>
-                    </div>
-                </div>
-
-                <div class="list_title">
-                    <div class="title_left">
-                        <p data-lang="most_played">MOST PLAYED<img src="../icons/trending-up.svg"></p>
-                        <p data-lang="most_p_desc">Top played games by player count</p>
-                    </div>
-                    <div class="title_dropdown">
-                        <select>
-                            <option value="most" data-lang="most_played" selected>Most Played</option>
-                            <option value="records" data-lang="records">Records</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="games_title">
-                    <div class="title_left">
-                        <p data-lang="g_t_rank">RANK</p>
-                    </div>
-                    <div class="title_right">
-                        <p data-lang="g_t_playing_1">PLAYING NOW</p>
-                        <p data-lang="g_t_peak_1">PEAK TODAY</p>
-                    </div>
-                </div>
-
-                <!-- games result output -->
-                <div class="games_list"><span class="loader"></span></div>
-                <p class="g_info">Notice: All data comes from Steams API's, external API's, and scraped from websites. If any of those services are down, data will not be shown.</p>
+      <div class="container" id="apps-list">
+        <div class="apps_list">
+          <!-- steam player count -->
+          <div class="steam_players">
+            <div class="s_players">
+              <div class="s_online">
+                <div class="s_dot s_online_dot"></div>
+                <span data-lang="s_online">PLAYING NOW</span>
+              </div>
+              <p class="online_num"><span class="loader s_1"></span></p>
             </div>
+            <div class="s_players">
+              <div class="s_playing">
+                <div class="s_dot s_playing_dot"></div>
+                <span data-lang="s_playing">ONLINE</span>
+              </div>
+              <p class="playing_num"><span class="loader"></span></p>
+            </div>
+          </div>
+
+          <div class="list_title">
+            <div class="title_left">
+              <p data-lang="most_played">
+                MOST PLAYED<img src="../icons/trending-up.svg" />
+              </p>
+              <p data-lang="most_p_desc">Top played games by player count</p>
+            </div>
+            <div class="title_dropdown">
+              <select>
+                <option value="most" data-lang="most_played" selected>
+                  Most Played
+                </option>
+                <option value="records" data-lang="records">Records</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="games_title">
+            <div class="title_left">
+              <p data-lang="g_t_rank">RANK</p>
+            </div>
+            <div class="title_right">
+              <p data-lang="g_t_playing_1">PLAYING NOW</p>
+              <p data-lang="g_t_peak_1">PEAK TODAY</p>
+            </div>
+          </div>
+
+          <!-- games result output -->
+          <div class="games_list"><span class="loader"></span></div>
+          <p class="g_info">
+            <!-- Notice: All data comes from Steams API's, external API's, and
+            scraped from websites. If any of those services are down, data will
+            not be shown. -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fill="rgb(120,113,108)"
+                d="M2.93 17.07A10 10 0 1 1 17.07 2.93A10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 5h2v6H9V5zm0 8h2v2H9v-2z"
+              ></path>
+            </svg>
+            Note: this page is not updated since June 2023. Why?.. Well i had to
+            deploy this project to Vercel for easy and fast deployment +
+            performance and mutch more.. but at the same time, I cannot fully
+            control the hosting server to download the requirements needed to
+            get the data of this page, maybe in the future I will find a
+            solution for that, Thank you.
+          </p>
         </div>
+      </div>
     </main>
-    
+
     <!-- footer saction -->
     <%- include("partials/footer.ejs"); %>
-</body>
+  </body>
 </html>

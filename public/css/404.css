@@ -1,52 +1,55 @@
 html {
-    overflow-y: hidden;
-    box-sizing: border-box;
+  overflow-y: hidden;
+  box-sizing: border-box;
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    font-family: 'Roboto', 'Vazirmatn', sans-serif;
-    font-size: 16px;
-    color: #fff;
-    background-color: #1b1d2a;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
+  font-family: "Roboto", "Vazirmatn", sans-serif;
+  font-size: 16px;
+  color: #fff;
+  background-color: #1b1d2a;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 a {
-    color: #0095ff;
-    text-decoration: none;
-    margin-right: 12px;
+  color: #0095ff;
+  text-decoration: none;
+  margin-right: 12px;
 }
 
 a:hover {
-    color: #0095ff;
-    text-decoration: underline;
+  color: #0095ff;
+  text-decoration: underline;
 }
 
 .container {
-    margin: auto;
+  margin: auto;
 }
 
 .header {
-    padding: 20px;
+  padding: 20px;
 }
 
 h1 {
-    color: #66c0f4;
-    font-size: 24px;
-    line-height: 1.2;
-    font-weight: 500;
-    max-width: unset;
-    margin: 15px;
+  color: #66c0f4;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 500;
+  max-width: unset;
+  margin: 15px;
 }

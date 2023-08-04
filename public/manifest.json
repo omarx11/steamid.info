@@ -1,0 +1,12 @@
+{
+  "theme_color": "#171717",
+  "background_color": "#b6d2ff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "author": "Omar Abdulaziz",
+  "name": "steamid.info",
+  "app_name": "steamid.info",
+  "short_name": "SGG",
+  "description": "Find and show any list of games from any Steam profile effortlessly by simply entering the steamID in the search bar. Once logged in, you can conveniently view your friends' profiles along with the games they own."
+}

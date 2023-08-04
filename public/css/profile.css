@@ -1,350 +1,363 @@
 :root {
-    --color-default-0: hsl(222, 19%, 11%);
-    --color-default-1: hsl(222, 19%, 13%);
-    --color-default-2: hsl(200, 18%, 23%);
-    --color-default-3: hsla(199, 18%, 33%, 0.6);
-    --color-default-4: hsl(199, 18%, 38%);
-    --color-outline-1: hsl(205, 100%, 50%);
-    --color-text-1: #eee;
-    --color-text-2: #ddd;
-    --color-text-3: #999;
-    --color-link-1: hsl(221, 63%, 55%);
-    --color-link-2: hsl(227, 42%, 72%);
-    color-scheme: dark light;
+  --color-default-0: hsl(222, 19%, 11%);
+  --color-default-1: hsl(222, 19%, 13%);
+  --color-default-2: hsl(200, 18%, 23%);
+  --color-default-3: hsla(199, 18%, 33%, 0.6);
+  --color-default-4: hsl(199, 18%, 38%);
+  --color-outline-1: hsl(205, 100%, 50%);
+  --color-text-1: #eee;
+  --color-text-2: #ddd;
+  --color-text-3: #999;
+  --color-link-1: hsl(221, 63%, 55%);
+  --color-link-2: hsl(227, 42%, 72%);
+  color-scheme: dark light;
 }
 
 html {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    word-break: normal;
-    scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  word-break: normal;
+  scroll-behavior: smooth;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-:after, :before {
-    text-decoration: inherit;
-    vertical-align: inherit;
+:after,
+:before {
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
-*, :after, :before {
-    background-repeat: no-repeat;
-    box-sizing: inherit;
+*,
+:after,
+:before {
+  background-repeat: no-repeat;
+  box-sizing: inherit;
 }
 
-html, body {
-    height: 100%;
-    margin: 0 auto;
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
 }
 
 body {
-    background: radial-gradient(var(--color-default-2), #020404);
-    color: var(--color-text-1);
-    font-size: 18px;
-    font-family: 'Roboto', 'Vazirmatn', sans-serif;
-    overflow-x: hidden;
-    transition: background .25s;
+  background: radial-gradient(var(--color-default-2), #020404);
+  color: var(--color-text-1);
+  font-size: 18px;
+  font-family: "Roboto", "Vazirmatn", sans-serif;
+  overflow-x: hidden;
+  transition: background 0.25s;
 }
 
 a {
-    text-decoration: none;
-    color: var(--color-text-2);
+  text-decoration: none;
+  color: var(--color-text-2);
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 select {
-    background: url("../icons/selector.svg") no-repeat right .2rem center/20px 20px;
-    appearance: none;
+  background: url("../icons/selector.svg") no-repeat right 0.2rem center/20px
+    20px;
+  appearance: none;
 }
 
 .loader {
-    border: 12px solid var(--color-text-1);
-    border-bottom-color: var(--color-default-4);
-    border-radius: 50%;
-    margin-right: 10px;
-    display: block;
-    animation: rotation 1s linear infinite;
+  border: 12px solid var(--color-text-1);
+  border-bottom-color: var(--color-default-4);
+  border-radius: 50%;
+  margin-right: 10px;
+  display: block;
+  animation: rotation 1s linear infinite;
 }
 
 @keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 main {
-    position: relative;
-    height: auto;
-    min-height: 90%;
+  position: relative;
+  height: auto;
+  min-height: 90%;
 }
 
 main .container {
-    background: rgba(26, 37, 44, 0.4);
-    max-width: 800px;
-    height: auto;
-    margin: 0 auto;
-    margin-top: 80px;
-    margin-bottom: 80px;
-    border-radius: 6px;
-    padding-bottom: 80px;
+  background: rgba(26, 37, 44, 0.4);
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  border-radius: 6px;
+  padding-bottom: 80px;
 }
 
 .container h1 {
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid var(--color-default-3);
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--color-default-3);
 }
 
 .container .not_found {
-    text-align: center;
-    color: #f0f;
-    padding-top: 50px;
-    font-size: 1.2em;
+  text-align: center;
+  color: #f0f;
+  padding-top: 50px;
+  font-size: 1.2em;
 }
 
 main .main_header {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    min-height: 46px;
-    padding-top: 30px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 46px;
+  padding-top: 30px;
 }
 
 .main_header a {
-    background-color: var(--color-default-3);
-    height: 100%;
-    padding: 5px 12px 5px 12px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: .95em;
+  background-color: var(--color-default-3);
+  height: 100%;
+  padding: 5px 12px 5px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.95em;
 }
 
 .main_header a img {
-    width: 19px;
-    vertical-align: -3px;
+  width: 19px;
+  vertical-align: -3px;
 }
 
 .main_header a:hover {
-    background-color: var(--color-link-1);
+  background-color: var(--color-link-1);
 }
 
 main .user_info {
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
 }
 
 .user_info .u_img {
-    margin-left: 25px;
-    margin-right: 25px;
-    border-radius: 8px;
+  margin-left: 25px;
+  margin-right: 25px;
+  border-radius: 8px;
 }
 
 .u_img .u_p_img {
-    display: block;
-    width: 160px;
-    border-radius: 8px;
-    border: 3px solid var(--color-default-4);
+  display: block;
+  width: 160px;
+  border-radius: 8px;
+  border: 3px solid var(--color-default-4);
 }
 
 .u_img .u_s_profile {
-    display: block;
-    text-align: center;
-    margin: 10px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    background-color: hsl(221, 61%, 46%);
-    border-radius: 4px;
-    text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 10px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: hsl(221, 61%, 46%);
+  border-radius: 4px;
+  text-decoration: none;
 }
 
 .u_img .u_s_profile:hover {
-    background-color: var(--color-link-1);
+  background-color: var(--color-link-1);
 }
 
 .u_img .u_s_profile img {
-    vertical-align: -2px;
+  vertical-align: -2px;
 }
 
 .user_info .u_status {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 10px;
-    color: var(--color-text-1);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 10px;
+  color: var(--color-text-1);
 }
 
 .u_status .u_status_header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-default-3);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-default-3);
 }
 
 .u_status_header .u_name {
-    font-size: 1.8em;
-    color: #eee;
-    padding-left: 8px;
-    padding-bottom: 8px;
+  font-size: 1.8em;
+  color: #eee;
+  padding-left: 8px;
+  padding-bottom: 8px;
 }
 
 .u_status_header .u_share {
-    border-radius: 4px;
-    padding: 2px 6px 2px 6px;
-    margin-right: 8px;
-    cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 6px 2px 6px;
+  margin-right: 8px;
+  cursor: pointer;
 }
 
 .u_status_header .u_share img {
-    width: 18px;
-    vertical-align: -2px;
+  width: 18px;
+  vertical-align: -2px;
 }
 
 .u_status .more_u_s {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .more_u_s .u_description {
-    min-height: 60px;
-    border-bottom: 1px solid var(--color-default-3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #ccc;
+  min-height: 60px;
+  border-bottom: 1px solid var(--color-default-3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ccc;
 }
 
 .more_u_s .u_details {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-top: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-top: 5px;
 }
 
 .u_details table:first-child {
-    padding-right: 50px;
+  padding-right: 50px;
 }
 
 .u_details table tr td {
-    padding: 2px 4px 2px 4px;
+  padding: 2px 4px 2px 4px;
 }
 
 .u_details table tr td:nth-child(2) {
-    color: #ccc;
+  color: #ccc;
 }
 
 .u_details .u_flag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .u_details .u_flag img {
-    display: block;
-    width: 22px;
-    padding-left: 4px;
+  display: block;
+  width: 22px;
+  padding-left: 4px;
 }
 
 .container .user_fav_game {
-    border-top: 1px solid hsl(199, 18%, 38%);
-    height: 300px;
-    margin-top: 34px;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  border-top: 1px solid hsl(199, 18%, 38%);
+  height: 300px;
+  margin-top: 34px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .user_fav_game .u_f_title {
-    border-top: 1px solid hsla(199, 18%, 38%, 0.6);
-    border-bottom: 1px solid hsla(199, 18%, 38%, 0.6);
-    text-align: center;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    font-size: 1.2em;
-    font-weight: bold;
+  border-top: 1px solid hsla(199, 18%, 38%, 0.6);
+  border-bottom: 1px solid hsla(199, 18%, 38%, 0.6);
+  text-align: center;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
 .user_fav_game .u_f_title p {
-    color: var(--color-link-2);
+  color: var(--color-link-2);
 }
 
 .user_fav_game .u_f_img {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    user-select: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  user-select: none;
 }
 
 .fav_game_card_wrapper {
-    max-width: 250px;
-    min-width: 150px;
-    margin: 0;
-    flex: 0 1 16.66%;
-    padding: 1rem;
+  max-width: 250px;
+  min-width: 150px;
+  margin: 0;
+  flex: 0 1 16.66%;
+  padding: 1rem;
 }
 .game_card.default {
-    filter: blur(1px);
+  filter: blur(1px);
 }
 .game_card {
-    padding: 0 0 150% 0;
-    background: url("") no-repeat transparent 50% 50%;
-    background-size: cover;
-    border: 1px solid rgba(0, 0, 0, 0.25);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.5);
-    transition: all ease 0.28s 0.01s;
-    transform: perspective(222px) translate3d(0px, 5px, 0px) rotateX(0deg);
-    perspective-origin: top;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
+  padding: 0 0 150% 0;
+  background: url("") no-repeat transparent 50% 50%;
+  background-size: cover;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 10px -2px rgba(0, 0, 0, 0.5);
+  transition: all ease 0.28s 0.01s;
+  transform: perspective(222px) translate3d(0px, 5px, 0px) rotateX(0deg);
+  perspective-origin: top;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
 }
 .game_card::before {
-    width: 100%;
-    height: 172%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: "";
-    background-image: linear-gradient(35deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 51.5%, rgba(255, 255, 255, 0.15) 54%, rgba(255, 255, 255, 0.15) 100%);
-    transform: translateY(-36%);
-    opacity: 0.5;
-    transition: all ease 0.28s 0.01s;
+  width: 100%;
+  height: 172%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  background-image: linear-gradient(
+    35deg,
+    rgba(0, 0, 0, 0.1) 0%,
+    rgba(0, 0, 0, 0.07) 51.5%,
+    rgba(255, 255, 255, 0.15) 54%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  transform: translateY(-36%);
+  opacity: 0.5;
+  transition: all ease 0.28s 0.01s;
 }
-.game_card:hover, .game_card:focus {
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transform: perspective(222px) translate3d(0px, 0px, 8px) rotateX(3deg);
-    transform-origin: center;
-    box-shadow: 0 14px 16px -2px rgba(0, 0, 0, 0.5);
+.game_card:hover,
+.game_card:focus {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transform: perspective(222px) translate3d(0px, 0px, 8px) rotateX(3deg);
+  transform-origin: center;
+  box-shadow: 0 14px 16px -2px rgba(0, 0, 0, 0.5);
 }
-.game_card:hover::before, .game_card:focus::before {
-    opacity: 1;
-    transform: translateY(-20%);
+.game_card:hover::before,
+.game_card:focus::before {
+  opacity: 1;
+  transform: translateY(-20%);
 }
 .game_card:active {
-    filter: brightness(80%) contrast(110%);
+  filter: brightness(80%) contrast(110%);
 }
 
 body.ar footer p {
-    text-align: right;
+  text-align: right;
 }

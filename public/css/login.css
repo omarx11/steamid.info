@@ -1,201 +1,216 @@
 :root {
-    --color-default-0: hsl(222, 19%, 11%);
-    --color-default-1: hsl(222, 19%, 13%);
-    --color-default-2: hsl(200, 18%, 23%);
-    --color-default-3: hsl(199, 18%, 33%);
-    --color-default-4: hsl(199, 18%, 38%);
-    --color-outline-1: hsl(205, 100%, 50%);
-    --color-text-1: #eee;
-    --color-text-2: #ddd;
-    --color-text-3: #999;
-    --color-link-1: hsl(221, 63%, 55%);
-    --color-link-2: hsl(227, 42%, 72%);
-    color-scheme: dark light;
+  --color-default-0: hsl(222, 19%, 11%);
+  --color-default-1: hsl(222, 19%, 13%);
+  --color-default-2: hsl(200, 18%, 23%);
+  --color-default-3: hsl(199, 18%, 33%);
+  --color-default-4: hsl(199, 18%, 38%);
+  --color-outline-1: hsl(205, 100%, 50%);
+  --color-text-1: #eee;
+  --color-text-2: #ddd;
+  --color-text-3: #999;
+  --color-link-1: hsl(221, 63%, 55%);
+  --color-link-2: hsl(227, 42%, 72%);
+  color-scheme: dark light;
 }
 
 html {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-size-adjust: 100%;
-    word-break: normal;
-    scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  word-break: normal;
+  scroll-behavior: smooth;
 }
 
 * {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
-:after, :before {
-    text-decoration: inherit;
-    vertical-align: inherit;
+:after,
+:before {
+  text-decoration: inherit;
+  vertical-align: inherit;
 }
 
-*, :after, :before {
-    background-repeat: no-repeat;
-    box-sizing: inherit;
+*,
+:after,
+:before {
+  background-repeat: no-repeat;
+  box-sizing: inherit;
 }
 
-html, body {
-    height: 100%;
-    margin: 0 auto;
+html,
+body {
+  height: 100%;
+  margin: 0 auto;
 }
 
 body {
-    background: radial-gradient(hsla(200, 18%, 23%, 0.6), #020404);
-    color: var(--color-text-1);
-    font-size: 18px;
-    font-family: 'Roboto', 'Vazirmatn', sans-serif;
-    overflow-x: hidden;
-    transition: background .25s;
+  background: radial-gradient(hsla(200, 18%, 13%, 1), #020404);
+  color: var(--color-text-1);
+  font-size: 18px;
+  font-family: "Roboto", "Vazirmatn", sans-serif;
+  overflow-x: hidden;
+  transition: background 0.25s;
 }
 
 a {
-    text-decoration: none;
-    color: var(--color-text-2);
+  text-decoration: none;
+  color: var(--color-text-2);
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 select {
-    background: url("../icons/selector.svg") no-repeat right .2rem center/20px 20px;
-    appearance: none;
+  background: url("../icons/selector.svg") no-repeat right 0.2rem center/20px
+    20px;
+  appearance: none;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 86%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 86%;
 }
 
 main .container {
-    background-color: rgba(26, 37, 44, 0.2);
-    width: 400px;
-    height: auto;
-    text-align: center;
-    margin-bottom: 80px;
-    box-shadow: 0 0 14px -6px #000;
+  background-color: rgba(26, 37, 44, 0.2);
+  width: 400px;
+  height: auto;
+  text-align: center;
+  box-shadow: 0 0 14px -6px #000;
 }
 
 .container .model_header {
-    box-shadow: inset 0 -10px 15px -12px rgb(0 0 0 / 35%), 0 0 0 #555;
+  box-shadow: inset 0 -10px 15px -12px rgb(0 0 0 / 35%), 0 0 0 #555;
 }
 
 .container .model_header h1 {
-    color: #fff;
-    font-weight: 600;
-    line-height: 1.3;
-    padding-top: 10px;
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.3;
+  padding-top: 10px;
 }
 
 .container .model_header p {
-    color: hsla(0,0%,100%,.6);
-    font-size: 14px;
-    padding-top: 10px;
-    padding-bottom: 15px;
+  color: hsla(0, 0%, 100%, 0.6);
+  font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 .container .model_wrap {
-    margin: 60px 0;
+  margin: 60px 0;
 }
 
 .container .model_wrap img {
-    width: 178px;
-    height: 43px;
-    opacity: 0.8;
+  width: 178px;
+  height: 43px;
+  opacity: 0.8;
 }
 
 .container .model_wrap img:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .container .model_wrap img:active {
-    scale: 0.98;
+  scale: 0.98;
+}
+
+.login_info {
+  display: flex;
+  align-items: start;
+  font-size: small;
+  color: var(--color-text-3);
+  gap: 6px;
 }
 
 /* # Light Mode
 ================================================== */
 
 body.light {
-    background-color: #eee;
-    transition: background .25s;
+  background-color: #eee;
+  transition: background 0.25s;
 }
 
 body.light header {
-    background-color: #99A6D5;
-    box-shadow: 0 1px 4px #123;
+  background-color: #99a6d5;
+  box-shadow: 0 1px 4px #123;
 }
 
 body.light .diplay_1 {
-    color: #123;
-    text-shadow: 2px 2px 4px #eee;
+  color: #123;
+  text-shadow: 2px 2px 4px #eee;
 }
 
 body.light .diplay_2 {
-    background-color: #a0aedf;
-    color: #123;
-    text-shadow: 2px 2px 4px #eee;
+  background-color: #a0aedf;
+  color: #123;
+  text-shadow: 2px 2px 4px #eee;
 }
 
 body.light .mini_header {
-    background-color: #7883a9;
+  background-color: #7883a9;
 }
 
 body.light .website_logo a:hover {
-    text-decoration-color: #ccc;
+  text-decoration-color: #ccc;
 }
 
 body.light .navbar_center a {
-    color: #eee;
+  color: #eee;
 }
 
 body.light .navbar_center a:hover {
-    color: #ccc;
+  color: #ccc;
 }
 
 body.light .navbar_center .lang_selector {
-    background-color: #7883a9;
-    color: #eee;
+  background-color: #7883a9;
+  color: #eee;
 }
 
 body.light .navbar_center .lang_selector:hover {
-    outline-color: #484f6a8d;
+  outline-color: #484f6a8d;
 }
 
-body.light .sign_in:hover, .sign_in:active {
-    box-shadow: 0 0 0 3px #484f6a8d;
+body.light .sign_in:hover,
+.sign_in:active {
+  box-shadow: 0 0 0 3px #484f6a8d;
 }
 
 /* mobile navbar */
 body.light .menu_list {
-    background-color: #bac4e3;
+  background-color: #bac4e3;
 }
 body.light .menu_list p {
-    color: #123;
+  color: #123;
 }
 body.light .menu_list li {
-    background-color: #7883a9;
-    color: #123;
+  background-color: #7883a9;
+  color: #123;
 }
 body.light .nav_lang_selector {
-    background-color: #7883a9;
-    color: #eee;
+  background-color: #7883a9;
+  color: #eee;
 }
 body.light .nav_lang_selector:hover {
-    outline-color: #484f6a8d;
+  outline-color: #484f6a8d;
 }
 body.light .nav_footer {
-    background-color: #99A6D5;
-    border-color: #7883a9;
-    color: #eee;
+  background-color: #99a6d5;
+  border-color: #7883a9;
+  color: #eee;
 }
 body.light .nav_footer a {
-    color: #fff;
+  color: #fff;
 }
 
 body.ar footer p {
-    text-align: right;
+  text-align: right;
 }
