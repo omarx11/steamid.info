@@ -6,10 +6,6 @@ const User = require("../models/User");
 
 const steam = new SteamAPI(process.env.STEAM_API_KEY);
 
-router.get("/", (req, res) => {
-  res.render("index", { user: req.user });
-});
-
 router.get("/store", (req, res) => {
   res.render("store", { user: req.user });
 });

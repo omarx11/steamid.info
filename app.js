@@ -66,15 +66,15 @@ app.use(express.static("./public"));
 app.use(express.static("./uploads"));
 
 app.get("/", (req, res) => {
-  res.send("dsadsadsadadasas R4W43TEDTGSD");
+  res.render("index", { user: req.user });
 });
 
 // routes middleware
-// app.use(require("./routes/pages"));
-// app.use(require("./routes/routes"));
-// app.use(require("./routes/login"));
-// app.use(require("./routes/steam"));
-// app.use(require("./routes/profilePic"));
+app.use(require("./routes/pages"));
+app.use(require("./routes/routes"));
+app.use(require("./routes/login"));
+app.use(require("./routes/steam"));
+app.use(require("./routes/profilePic"));
 
 app.get("*", (req, res) => {
   res.render("404");
