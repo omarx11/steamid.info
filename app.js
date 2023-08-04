@@ -11,6 +11,8 @@ require("dotenv").config();
 
 const app = express();
 
+const port = process.env.PORT || 5000;
+
 // database connection
 connectDB();
 
@@ -80,4 +82,7 @@ app.get("*", (req, res) => {
   res.render("404");
 });
 
-module.exports = app;
+// start server listening
+app.listen(port, () => {
+  console.log(`Listening: http://localhost:${port}`);
+});
