@@ -62,8 +62,8 @@ app.set("view engine", "ejs");
 // setup app configuration
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("public"));
-app.use(express.static("uploads"));
+app.use(express.static("./public"));
+app.use(express.static("./uploads"));
 
 // routes middleware
 app.use(require("./routes/pages"));
