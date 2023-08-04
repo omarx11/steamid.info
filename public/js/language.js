@@ -46,7 +46,7 @@ const translations = {
     sign_in: "Sign-In",
     header_p_1: "Steam Games Grabber",
     header_p_2:
-      "Find and show any list of games from any Steam profile effortlessly by simply entering the steamID in the search bar. Once logged in, you can conveniently view your friends' profiles along with the games they own.",
+      "Find and show any list of games from any Steam profile effortlessly by simply entering the steamID in the search bar. And Once logged in, you can conveniently view your friend's profiles and the games they own.",
     menu_list_p_1: "Scroll to",
     menu_list_p_2: "Set Language",
     menu_list_p_3: "Sign In",
