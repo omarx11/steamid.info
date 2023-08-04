@@ -77,7 +77,4 @@ app.get("*", (req, res) => {
   res.render("404");
 });
 
-// start server listening
-app.listen(port, () => {
-  console.log("server booting...");
-});
+module.exports = app;

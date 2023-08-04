@@ -2,9 +2,10 @@
   "name": "steam_games_grabber",
   "version": "1.0.0",
   "description": "Steam Project",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon app.js"
+    "dev": "nodemon index.js",
+    "vercel-build": "echo hello"
   },
   "author": "omar11.sa",
   "license": "ISC",
