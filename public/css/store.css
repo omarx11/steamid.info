@@ -300,14 +300,13 @@ main .container {
   display: flex;
   gap: 4px;
   color: rgb(160, 160, 162);
-  font-size: medium;
-  margin-top: 2rem;
+  font-size: small;
+  margin-top: 1rem;
   margin-bottom: 3rem;
   text-align: justify;
 }
 
 .apps_list .g_info svg {
-  width: 62px;
   padding-top: 2px;
 }
 
