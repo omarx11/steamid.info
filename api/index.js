@@ -1,4 +1,4 @@
 // import app from "../app";
-const index = require("../index");
+const app = require("../app");
 
-module.exports = index;
+module.exports = app;

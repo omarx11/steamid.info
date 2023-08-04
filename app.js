@@ -11,6 +11,8 @@ require("dotenv").config();
 
 const app = express();
 
+const port = process.env.PORT || 5000;
+
 // database connection
 connectDB();
 
@@ -74,6 +76,11 @@ app.use(require("./routes/profilePic"));
 
 app.get("*", (req, res) => {
   res.render("404");
+});
+
+// start server listening
+app.listen(port, () => {
+  console.log(`Listening: http://localhost:${port}`);
 });
 
 module.exports = app;
