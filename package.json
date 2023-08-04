@@ -4,7 +4,6 @@
   "description": "Steam Project",
   "main": "api/index.js",
   "scripts": {
-    "start": "node api/index.js",
     "dev": "nodemon index.js"
   },
   "author": "omar11.sa",
