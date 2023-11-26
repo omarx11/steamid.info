@@ -1,6 +1,12 @@
 /* # Light Mode
 ================================================== */
 
+.light_mode {
+  /* closed for now */
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
 body.light {
   background: radial-gradient(#fff, #99a6d5);
   transition: background 0.25s;
